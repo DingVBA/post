@@ -12,7 +12,7 @@ def index(request):
 def likePost(request):
     if request.method == 'GET':
         post_id = request.GET['post_id']
-        likedpost = Post.obejcts.get(pk=post_id) #getting the liked posts
+        likedpost = Post.objects.get(pk=post_id) #getting the liked posts
         m = Like(post=likedpost) # Creating Like Object
         m.save()  # saving it to store in database
         return HttpResponse("Success!") # Sending an success response
